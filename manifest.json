@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "Google Translate",
+  "description": "",
+  "version": "1.0",
+  "icons": {
+    "48": "./icons/icon.png"
+  },
+  "background": {
+    "scripts": ["./background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": {
+      "48": "./icons/icon.png"
+    },
+    "default_title": "Ждем"
+  },
+  "permissions": [
+    "tabs",
+    "webRequest",
+    "storage",
+    "webRequestBlocking",
+    "websocket",
+    "http://*/",
+    "https://*/",
+    "ws"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://moodle.astanait.edu.kz/*"],
+      "js": ["main.js"],
+      "all_frames": false
+    }
+  ],
+  "dependencies": {
+    "chrome-extension-websocket": "^0.10.0"
+  }
+}

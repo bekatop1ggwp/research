@@ -11,7 +11,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     };
   }
 });
-
+//test
 wss.onopen = () => {
   console.log("test wes");
 };
